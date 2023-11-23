@@ -4,10 +4,7 @@
 */
 
 SELECT "ProductLine"
-FROM "Production"."Product"
-WHERE "ListPrice" > 3 AND "ListPrice" IS NOT NULL AND "ProductLine" IS NOT NULL;
-
-
-
-
-
+	FROM "Production"."Product"
+	WHERE "ProductLine" IS NOT NULL
+	GROUP BY "ProductLine"
+	HAVING MIN("ListPrice") > 3;
