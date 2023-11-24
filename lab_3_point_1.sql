@@ -6,10 +6,3 @@
 SELECT C."AccountNumber", P."FirstName", P."LastName"
 FROM "Person"."Person" P
 JOIN "Sales"."Customer" C ON P."BusinessEntityID" = C."CustomerID";
-
-
-
-
-
-
-

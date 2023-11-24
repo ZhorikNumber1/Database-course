@@ -6,20 +6,6 @@
 
 SELECT P."ProductID"
 FROM "Production"."Product" P
-WHERE NOT EXISTS (
-    SELECT 1
-    FROM "Production"."ProductDocument" PD
-    WHERE P."ProductID" = PD."ProductID"
-);
-
-
-
-
-
-
-
-
-
-
-
-
+	EXCEPT
+SELECT PD."ProductID"
+FROM "Production"."ProductDocument" PD;

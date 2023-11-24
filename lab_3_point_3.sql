@@ -5,12 +5,8 @@
 	Person.Person, используя RIGHT OUTER JOIN
 */
 
-SELECT P."FirstName", P."LastName", CASE WHEN E."LoginID" IS NOT NULL THEN 'Есть' ELSE 'Нет' END as "HasLoginID"
+SELECT P."FirstName", P."LastName", 
+       CASE WHEN E."LoginID" IS NOT NULL THEN 'Есть' ELSE 'Нет' END as "HasLoginID"
 FROM "HumanResources"."Employee" E
-RIGHT OUTER JOIN "Person"."Person" P ON E."BusinessEntityID" = P."BusinessEntityID";
-
-
-
-
-
-
+RIGHT OUTER JOIN "Person"."Person" P ON E."BusinessEntityID" = P."BusinessEntityID"
+WHERE P."BusinessEntityID" IS NOT NULL;

@@ -6,10 +6,5 @@
 
 SELECT P."Name", CASE WHEN UM."UnitMeasureCode" IS NOT NULL THEN 'Есть' ELSE 'Нет' END as "IsWeightUnit"
 FROM "Production"."Product" P
-LEFT OUTER JOIN "Production"."UnitMeasure" UM ON P."WeightUnitMeasureCode" = UM."UnitMeasureCode";
-
-
-
-
-
-
+LEFT OUTER JOIN "Production"."UnitMeasure" UM ON P."WeightUnitMeasureCode" = UM."UnitMeasureCode"
+WHERE P."WeightUnitMeasureCode" IS NOT NULL;
