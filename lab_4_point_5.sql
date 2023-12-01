@@ -16,7 +16,8 @@ WHERE
         FROM 
             "Production"."Product" AS p2
         WHERE 
-            p1."ProductLine" = p2."ProductLine"
-            AND p2."ProductLine" IS NOT NULL
+            p1."ProductLine" = p2."ProductLine" 
+		AND p2."ListPrice" > 0
+        AND p2."ProductLine" IS NOT NULL
     )
     AND "ProductLine" IS NOT NULL;
